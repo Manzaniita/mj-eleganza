@@ -13,6 +13,12 @@ if ( ! defined( '_S_VERSION' ) ) {
 // Incluir archivos de administración
 require_once get_template_directory() . '/inc/customizer-functions.php';
 require_once get_template_directory() . '/inc/admin-settings.php';
+require_once get_template_directory() . '/inc/woocommerce-customizer.php';
+require_once get_template_directory() . '/inc/customizer-css-output.php';
+if ( class_exists( 'WooCommerce' ) ) {
+    require_once get_template_directory() . '/inc/class-mj-shop-widgets.php';
+    require_once get_template_directory() . '/inc/class-mj-shop-features.php';
+}
 
 /**
  * Configuración inicial del tema.
@@ -37,6 +43,34 @@ function mj_eleganza_scripts() {
     wp_enqueue_style( 'mj-eleganza-style', get_stylesheet_uri(), array(), _S_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'mj_eleganza_scripts' );
+
+/**
+ * Encolar scripts del customizer.
+ */
+function mj_eleganza_customizer_scripts() {
+    wp_enqueue_script(
+        'mj-customizer-controls',
+        get_template_directory_uri() . '/assets/js/customizer-controls.js',
+        array( 'jquery', 'customize-controls' ),
+        _S_VERSION,
+        true
+    );
+}
+add_action( 'customize_controls_enqueue_scripts', 'mj_eleganza_customizer_scripts' );
+
+/**
+ * Scripts para vista previa del customizer.
+ */
+function mj_eleganza_customizer_preview_scripts() {
+    wp_enqueue_script(
+        'mj-customizer-preview',
+        get_template_directory_uri() . '/assets/js/customizer-preview.js',
+        array( 'jquery', 'customize-preview' ),
+        _S_VERSION,
+        true
+    );
+}
+add_action( 'customize_preview_init', 'mj_eleganza_customizer_preview_scripts' );
 
 /**
  * Registrar ubicaciones de menú.

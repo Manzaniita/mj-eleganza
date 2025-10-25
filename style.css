@@ -472,3 +472,124 @@ body {
   padding: 20px;
   border-radius: 0 0 5px 5px;
 }
+
+/*--------------------------------------------------------------
+## Customizer Helper Classes
+--------------------------------------------------------------*/
+body.mj-card-style-minimal .woocommerce ul.products li.product {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+body.mj-card-style-boxed .woocommerce ul.products li.product {
+  border: 1px solid #333;
+}
+
+body.mj-card-style-elevated .woocommerce ul.products li.product {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.mj-button-position-hover .woocommerce ul.products li.product .button {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+body.mj-button-position-hover .woocommerce ul.products li.product:hover .button {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.mj-button-position-overlay .woocommerce ul.products li.product {
+  position: relative;
+}
+
+body.mj-button-position-overlay .woocommerce ul.products li.product .button {
+  position: absolute;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  width: calc(100% - 40px);
+}
+
+body.mj-image-ratio-portrait .woocommerce ul.products li.product a img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+body.mj-image-ratio-landscape .woocommerce ul.products li.product a img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+body.mj-image-ratio-square .woocommerce ul.products li.product a img {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+body.mj-image-hover-enabled .woocommerce ul.products li.product a img {
+  transition: transform 0.4s ease;
+}
+
+body.mj-image-hover-enabled.mj-image-hover-effect-zoom .woocommerce ul.products li.product:hover a img {
+  transform: scale(1.05);
+}
+
+body.mj-image-hover-enabled.mj-image-hover-effect-fade .woocommerce ul.products li.product {
+  position: relative;
+}
+
+body.mj-image-hover-enabled.mj-image-hover-effect-fade .woocommerce ul.products li.product a img {
+  transition: opacity 0.4s ease;
+}
+
+body.mj-image-hover-enabled.mj-image-hover-effect-fade .woocommerce ul.products li.product:hover a img {
+  opacity: 0.85;
+}
+
+body.mj-image-hover-enabled.mj-image-hover-effect-slide .woocommerce ul.products li.product a img {
+  transition: transform 0.4s ease;
+}
+
+body.mj-image-hover-enabled.mj-image-hover-effect-slide .woocommerce ul.products li.product:hover a img {
+  transform: translateY(-6px);
+}
+
+body.mj-single-gallery-top .single-product div.product {
+  grid-template-columns: 1fr;
+}
+
+body.mj-single-gallery-right .single-product div.product {
+  direction: rtl;
+}
+
+body.mj-single-gallery-right .single-product div.product > * {
+  direction: ltr;
+}
+
+body.mj-single-sticky-summary .single-product .summary.entry-summary {
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+}
+
+body.mj-single-tab-style-vertical .single-product .woocommerce-tabs {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+}
+
+body.mj-single-tab-style-vertical .single-product .woocommerce-tabs ul.tabs {
+  display: flex;
+  flex-direction: column;
+}
+
+body.mj-single-tab-style-accordion .single-product .woocommerce-tabs ul.tabs {
+  display: none;
+}
+
+body.mj-single-tab-position-side .single-product .woocommerce-tabs {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+}
