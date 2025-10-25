@@ -1,0 +1,474 @@
+/*
+Theme Name: MJ Eleganza
+Theme URI: https://mjimportaciones.com.ar/
+Author: [MJ Importaciones]
+Author URI: https://mjimportaciones.com.ar/
+Description: Tema personalizado. Diseñado para una experiencia de usuario de lujo.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.4
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: mjeleganza
+Tags: e-commerce, custom-theme, woocommerce, responsive-layout
+
+Este tema es parte de un proyecto de desarrollo a medida.
+*/
+
+:root {
+  --color-background: #111111; /* Gris oscuro / Negro mate */
+  --color-surface: #1E1E1E;    /* Un gris ligeramente más claro para tarjetas o secciones */
+  --color-primary: #007BFF;   /* Azul eléctrico para acentos y botones */
+  --color-secondary: #1E1E1E; /* Color secundario configurable */
+  --color-text-primary: #FFFFFF; /* Blanco puro para texto principal */
+  --color-text-secondary: #A0A0A0; /* Gris claro para texto secundario */
+  --font-primary: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text-primary);
+  font-family: var(--font-primary);
+}
+
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-header {
+  background-color: var(--color-surface);
+  padding: 15px 30px;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.sticky-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(6px);
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Branding & Logo */
+.site-branding .custom-logo {
+  max-height: 50px;
+  width: auto;
+}
+
+.site-title a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* Navigation Menu */
+.main-navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.main-navigation ul li {
+  margin: 0 15px;
+}
+
+.main-navigation ul li a {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.main-navigation ul li a:hover,
+.main-navigation .current_page_item > a {
+  color: var(--color-text-primary);
+}
+
+/* Header Tools: Search & Icons */
+.header-tools {
+  display: flex;
+  align-items: center;
+}
+
+.product-search .woocommerce-product-search {
+  display: flex;
+}
+
+.product-search input[type="search"] {
+  background-color: var(--color-background);
+  border: 1px solid #333;
+  color: var(--color-text-primary);
+  padding: 8px 12px;
+  border-radius: 5px 0 0 5px;
+}
+
+.product-search button {
+  background-color: var(--color-primary);
+  border: none;
+  color: var(--color-text-primary);
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+.header-icons {
+  display: flex;
+  margin-left: 20px;
+}
+
+.header-icons a {
+  color: var(--color-text-secondary);
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+
+.header-icons a:hover {
+  color: var(--color-text-primary);
+}
+
+.header-icons svg {
+  width: 24px;
+  height: 24px;
+}
+
+/*--------------------------------------------------------------
+## Front Page
+--------------------------------------------------------------*/
+
+/* Contenedor general para secciones */
+.section-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--color-text-primary);
+}
+
+/* 1. Hero Banner */
+.hero-banner {
+  background-color: #000;
+  background-image: url('https://via.placeholder.com/1920x800.png/000000/FFFFFF?text=Imagen+Producto+Estrella');
+  background-size: cover;
+  background-position: center center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 5px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  margin: 0 0 20px;
+  color: var(--color-text-secondary);
+}
+
+.hero-button {
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+  background-color: #0056b3;
+}
+
+/* 2. Featured Categories */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  text-decoration: none;
+  color: var(--color-text-primary);
+  background-color: var(--color-surface);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+}
+
+.category-image-placeholder {
+  height: 200px;
+  background-color: #333;
+}
+
+.category-name {
+  display: block;
+  padding: 15px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* 3. Featured Products - Estilos básicos para el shortcode */
+.featured-products .woocommerce ul.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.featured-products .woocommerce ul.products li.product {
+  background-color: var(--color-surface);
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+/* 4. Value Proposition */
+.value-proposition {
+  background-color: var(--color-surface);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  text-align: center;
+}
+
+.value-item h4 {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.value-item svg {
+  color: var(--color-primary);
+}
+
+/*--------------------------------------------------------------
+## WooCommerce - Archive/Shop Page
+--------------------------------------------------------------*/
+.shop-container {
+  max-width: 1400px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.woocommerce-products-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.shop-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 40px;
+}
+
+/* Sidebar */
+#secondary.widget-area .widget {
+  background-color: var(--color-surface);
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#secondary.widget-area .widget-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #333;
+}
+
+/* Product Grid */
+.woocommerce ul.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.woocommerce ul.products li.product {
+  background-color: var(--color-surface);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.woocommerce ul.products li.product:hover {
+  transform: translateY(-5px);
+}
+
+.woocommerce ul.products li.product a {
+  text-decoration: none;
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+  color: var(--color-text-primary);
+  padding: 10px 15px 0;
+  font-size: 16px;
+}
+
+.woocommerce ul.products li.product .price {
+  color: var(--color-text-primary);
+  font-weight: 700;
+  padding: 5px 15px;
+  display: block;
+}
+
+.woocommerce ul.products li.product .button {
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  margin: 0 15px 15px;
+  padding: 10px;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.woocommerce ul.products li.product .button:hover {
+  background-color: #0056b3;
+}
+
+/*--------------------------------------------------------------
+## WooCommerce - Single Product Page
+--------------------------------------------------------------*/
+.single-product-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Layout principal del producto */
+.single-product div.product {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+}
+
+/* Galería de Imágenes (Columna Izquierda) */
+.woocommerce div.product div.images.woocommerce-product-gallery {
+  background-color: var(--color-surface);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Resumen del Producto (Columna Derecha) */
+.single-product .summary.entry-summary {
+  padding-top: 10px;
+}
+
+.single-product .product_title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.single-product .price {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+}
+
+.single-product .woocommerce-product-details__short-description {
+  color: var(--color-text-secondary);
+  margin-bottom: 20px;
+}
+
+/* Formulario de Variaciones */
+.single-product table.variations {
+  margin-bottom: 20px;
+}
+
+.single-product table.variations label {
+  font-weight: 600;
+}
+
+.single-product table.variations select {
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  border: 1px solid #333;
+  padding: 8px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+/* Botón de Añadir al Carrito */
+.single-product .cart .button {
+  background-color: var(--color-primary);
+  color: var(--color-text-primary);
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: 700;
+  width: 100%;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.single-product .cart .button:hover {
+  background-color: #0056b3;
+}
+
+/* Pestañas de Información (Descripción, etc.) */
+.woocommerce-tabs {
+  margin-top: 60px;
+}
+
+.woocommerce-tabs ul.tabs {
+  background-color: var(--color-surface);
+  border-radius: 5px 5px 0 0;
+  padding: 0 20px;
+  border-bottom: 1px solid #333;
+}
+
+.woocommerce-tabs ul.tabs::before {
+  border-bottom: none;
+}
+
+.woocommerce-tabs ul.tabs li {
+  background-color: transparent;
+  border: none;
+}
+
+.woocommerce-tabs ul.tabs li a {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+}
+
+.woocommerce-tabs ul.tabs li.active a {
+  color: var(--color-text-primary);
+}
+
+.woocommerce-tabs .panel {
+  background-color: var(--color-surface);
+  padding: 20px;
+  border-radius: 0 0 5px 5px;
+}
